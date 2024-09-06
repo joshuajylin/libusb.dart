@@ -144,9 +144,9 @@ extension LibusbInline on Libusb {
   ) {
     return libusb_control_transfer(
       dev_handle,
-      libusb_endpoint_direction.LIBUSB_ENDPOINT_IN,
-      libusb_standard_request.LIBUSB_REQUEST_GET_DESCRIPTOR,
-      libusb_descriptor_type.LIBUSB_DT_STRING << 8 | desc_index,
+      libusb_endpoint_direction.LIBUSB_ENDPOINT_IN.value,
+      libusb_standard_request.LIBUSB_REQUEST_GET_DESCRIPTOR.value,
+      libusb_descriptor_type.LIBUSB_DT_STRING.value << 8 | desc_index,
       langid,
       data,
       length,
